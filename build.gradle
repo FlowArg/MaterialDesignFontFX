@@ -1,0 +1,82 @@
+allprojects {
+    apply plugin: 'java-library'
+
+    group 'fr.flowarg'
+
+    repositories {
+        mavenCentral()
+    }
+
+    compileJava {
+        options.encoding = 'UTF-8'
+        sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+apply plugin: 'idea'
+apply plugin: 'maven-publish'
+apply plugin: 'signing'
+
+version '7.2.96'
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+dependencies {
+    implementation 'de.jensd:fontawesomefx-commons:9.1.2'
+}
+
+artifacts {
+    archives sourcesJar, javadocJar
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            pom {
+                groupId = project.group
+                version = project.version
+                artifactId = 'materialdesignfontfx'
+                name = project.name
+                description = 'The Jensd\' Material Design Font library updated'
+                url = 'https://github.com/FlowArg/MaterialDesignFontFX'
+
+                scm {
+                    connection = 'scm:git:git://github.com/FlowArg/MaterialDesignFontFX.git'
+                    developerConnection = 'scm:git:ssh://github.com:FlowArg/MaterialDesignFontFX.git'
+                    url = 'https://github.com/FlowArg/MaterialDesignFontFX/tree/master'
+                }
+
+                developers {
+                    developer {
+                        id = 'flowarg'
+                        name = 'Flow Arg'
+                        email = 'flow@flowarg.fr'
+                    }
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            credentials {
+                username = System.getenv("OSSRH_USERNAME")
+                password = System.getenv("OSSRH_PASSWORD")
+            }
+            url = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        }
+    }
+}
+
+signing {
+    def signingKey = System.getenv("GPG_PRIVATE_KEY")
+    def signingPassword = System.getenv("GPG_PASSPHRASE")
+    useInMemoryPgpKeys(signingKey, signingPassword)
+    sign publishing.publications.mavenJava
+}
+
