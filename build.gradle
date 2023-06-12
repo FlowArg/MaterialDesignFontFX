@@ -51,6 +51,13 @@ publishing {
                     url = 'https://github.com/FlowArg/MaterialDesignFontFX/tree/master'
                 }
 
+                licenses {
+                    license {
+                        name = 'Apache License 2.0'
+                        url = 'https://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
                 developers {
                     developer {
                         id = 'flowarg'
