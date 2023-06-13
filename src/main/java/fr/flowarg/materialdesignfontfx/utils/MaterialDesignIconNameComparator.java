@@ -13,7 +13,7 @@
  */
 package fr.flowarg.materialdesignfontfx.utils;
 
-import de.jensd.fx.glyphs.GlyphIcons;
+import fr.flowarg.materialdesignfontfx.MaterialDesignIconGlyphs;
 
 import java.util.Comparator;
 
@@ -21,10 +21,10 @@ import java.util.Comparator;
  *
  * @author Jens Deters
  */
-public class MaterialDesignIconNameComparator implements Comparator<GlyphIcons>
+public class MaterialDesignIconNameComparator<TYPE extends Enum<TYPE> & MaterialDesignIconGlyphs<TYPE>> implements Comparator<MaterialDesignIconGlyphs<TYPE>>
 {
     @Override
-    public int compare(GlyphIcons o1, GlyphIcons o2) {
+    public int compare(MaterialDesignIconGlyphs<TYPE> o1, MaterialDesignIconGlyphs<TYPE> o2) {
         if(o1 != null && o2 != null){
             return o1.name().compareTo(o2.name());
         }

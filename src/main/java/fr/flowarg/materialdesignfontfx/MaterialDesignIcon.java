@@ -16,8 +16,6 @@
  */
 package fr.flowarg.materialdesignfontfx;
 
-import de.jensd.fx.glyphs.GlyphIcons;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -32,7 +30,8 @@ import java.util.List;
  */
 public class MaterialDesignIcon
 {
-    public enum A implements GlyphIcons {
+
+    public enum A implements MaterialDesignIconGlyphs<A> {
 
         AB_TESTING(new String(Character.toChars(0xF01C9))),
         ABACUS(new String(Character.toChars(0xF16E0))),
@@ -736,9 +735,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public A getDefaultGlyph()
+        {
+            return A.AB_TESTING;
+        }
     }
 
-    public enum B implements GlyphIcons {
+    public enum B implements MaterialDesignIconGlyphs<B> {
 
         BABEL(new String(Character.toChars(0xF0A25))),
         BABY(new String(Character.toChars(0xF006C))),
@@ -1295,9 +1300,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public B getDefaultGlyph()
+        {
+            return B.BABEL;
+        }
     }
 
-    public enum C implements GlyphIcons {
+    public enum C implements MaterialDesignIconGlyphs<C> {
 
         CABIN_A_FRAME(new String(Character.toChars(0xF188C))),
         CABLE_DATA(new String(Character.toChars(0xF1394))),
@@ -2358,9 +2369,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public C getDefaultGlyph()
+        {
+            return C.CABIN_A_FRAME;
+        }
     }
 
-    public enum D implements GlyphIcons {
+    public enum D implements MaterialDesignIconGlyphs<D> {
 
         DANCE_BALLROOM(new String(Character.toChars(0xF15FB))),
         DANCE_POLE(new String(Character.toChars(0xF1578))),
@@ -2624,9 +2641,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public D getDefaultGlyph()
+        {
+            return D.DANCE_BALLROOM;
+        }
     }
 
-    public enum E implements GlyphIcons {
+    public enum E implements MaterialDesignIconGlyphs<E> {
 
         EAR_HEARING(new String(Character.toChars(0xF07C5))),
         EAR_HEARING_LOOP(new String(Character.toChars(0xF1AEE))),
@@ -2843,9 +2866,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public E getDefaultGlyph()
+        {
+            return E.EAR_HEARING;
+        }
     }
 
-    public enum F implements GlyphIcons {
+    public enum F implements MaterialDesignIconGlyphs<F> {
 
         FACE_AGENT(new String(Character.toChars(0xF0D70))),
         FACE_MAN(new String(Character.toChars(0xF0643))),
@@ -3525,9 +3554,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public F getDefaultGlyph()
+        {
+            return F.FACE_AGENT;
+        }
     }
 
-    public enum G implements GlyphIcons {
+    public enum G implements MaterialDesignIconGlyphs<G> {
 
         GAMEPAD(new String(Character.toChars(0xF0296))),
         GAMEPAD_CIRCLE(new String(Character.toChars(0xF0E33))),
@@ -3719,9 +3754,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public G getDefaultGlyph()
+        {
+            return G.GAMEPAD;
+        }
     }
 
-    public enum H implements GlyphIcons {
+    public enum H implements MaterialDesignIconGlyphs<H> {
 
         HAIL(new String(Character.toChars(0xF0AC1))),
         HAIR_DRYER(new String(Character.toChars(0xF10EF))),
@@ -4033,9 +4074,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public H getDefaultGlyph()
+        {
+            return H.HAIL;
+        }
     }
 
-    public enum I implements GlyphIcons {
+    public enum I implements MaterialDesignIconGlyphs<I> {
 
         ICE_CREAM(new String(Character.toChars(0xF082A))),
         ICE_CREAM_OFF(new String(Character.toChars(0xF0E52))),
@@ -4163,9 +4210,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public I getDefaultGlyph()
+        {
+            return I.ICE_CREAM;
+        }
     }
 
-    public enum J implements GlyphIcons {
+    public enum J implements MaterialDesignIconGlyphs<J> {
 
         JABBER(new String(Character.toChars(0xF0DD5))),
         JEEPNEY(new String(Character.toChars(0xF0302))),
@@ -4191,9 +4244,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public J getDefaultGlyph()
+        {
+            return J.JABBER;
+        }
     }
 
-    public enum K implements GlyphIcons {
+    public enum K implements MaterialDesignIconGlyphs<K> {
 
         KABADDI(new String(Character.toChars(0xF0D87))),
         KANGAROO(new String(Character.toChars(0xF1558))),
@@ -4281,9 +4340,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public K getDefaultGlyph()
+        {
+            return K.KABADDI;
+        }
     }
 
-    public enum L implements GlyphIcons {
+    public enum L implements MaterialDesignIconGlyphs<L> {
 
         LABEL(new String(Character.toChars(0xF0315))),
         LABEL_MULTIPLE(new String(Character.toChars(0xF1375))),
@@ -4537,9 +4602,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public L getDefaultGlyph()
+        {
+            return L.LABEL;
+        }
     }
 
-    public enum M implements GlyphIcons {
+    public enum M implements MaterialDesignIconGlyphs<M> {
 
         MACE(new String(Character.toChars(0xF1843))),
         MAGAZINE_PISTOL(new String(Character.toChars(0xF0324))),
@@ -4973,9 +5044,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public M getDefaultGlyph()
+        {
+            return M.MACE;
+        }
     }
 
-    public enum N implements GlyphIcons {
+    public enum N implements MaterialDesignIconGlyphs<N> {
 
         NAIL(new String(Character.toChars(0xF0DDF))),
         NAS(new String(Character.toChars(0xF08F3))),
@@ -5183,9 +5260,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public N getDefaultGlyph()
+        {
+            return N.NAIL;
+        }
     }
 
-    public enum O implements GlyphIcons {
+    public enum O implements MaterialDesignIconGlyphs<O> {
 
         OAR(new String(Character.toChars(0xF067C))),
         OCARINA(new String(Character.toChars(0xF0DE0))),
@@ -5263,9 +5346,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public O getDefaultGlyph()
+        {
+            return O.OAR;
+        }
     }
 
-    public enum P implements GlyphIcons {
+    public enum P implements MaterialDesignIconGlyphs<P> {
 
         PAC_MAN(new String(Character.toChars(0xF0BAF))),
         PACKAGE(new String(Character.toChars(0xF03D3))),
@@ -5748,9 +5837,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public P getDefaultGlyph()
+        {
+            return P.PAC_MAN;
+        }
     }
 
-    public enum Q implements GlyphIcons {
+    public enum Q implements MaterialDesignIconGlyphs<Q> {
 
         QI(new String(Character.toChars(0xF0999))),
         QQCHAT(new String(Character.toChars(0xF0605))),
@@ -5781,9 +5876,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public Q getDefaultGlyph()
+        {
+            return Q.QI;
+        }
     }
 
-    public enum R implements GlyphIcons {
+    public enum R implements MaterialDesignIconGlyphs<R> {
 
         RABBIT(new String(Character.toChars(0xF0907))),
         RABBIT_VARIANT(new String(Character.toChars(0xF1A61))),
@@ -6065,9 +6166,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public R getDefaultGlyph()
+        {
+            return R.RABBIT;
+        }
     }
 
-    public enum S implements GlyphIcons {
+    public enum S implements MaterialDesignIconGlyphs<S> {
 
         SACK(new String(Character.toChars(0xF0D2E))),
         SACK_OUTLINE(new String(Character.toChars(0xF1C4C))),
@@ -6777,9 +6884,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public S getDefaultGlyph()
+        {
+            return S.SACK;
+        }
     }
 
-    public enum T implements GlyphIcons {
+    public enum T implements MaterialDesignIconGlyphs<T> {
 
         TAB(new String(Character.toChars(0xF04E9))),
         TAB_MINUS(new String(Character.toChars(0xF0B4B))),
@@ -7271,9 +7384,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public T getDefaultGlyph()
+        {
+            return T.TAB;
+        }
     }
 
-    public enum U implements GlyphIcons {
+    public enum U implements MaterialDesignIconGlyphs<U> {
 
         UBISOFT(new String(Character.toChars(0xF0BDA))),
         UBUNTU(new String(Character.toChars(0xF0548))),
@@ -7331,9 +7450,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public U getDefaultGlyph()
+        {
+            return U.UBISOFT;
+        }
     }
 
-    public enum V implements GlyphIcons {
+    public enum V implements MaterialDesignIconGlyphs<V> {
 
         VACUUM(new String(Character.toChars(0xF19A1))),
         VACUUM_OUTLINE(new String(Character.toChars(0xF19A2))),
@@ -7509,9 +7634,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public V getDefaultGlyph()
+        {
+            return V.VACUUM;
+        }
     }
 
-    public enum W implements GlyphIcons {
+    public enum W implements MaterialDesignIconGlyphs<W> {
 
         WALK(new String(Character.toChars(0xF0583))),
         WALL(new String(Character.toChars(0xF07FE))),
@@ -7755,9 +7886,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public W getDefaultGlyph()
+        {
+            return W.WALK;
+        }
     }
 
-    public enum X implements GlyphIcons {
+    public enum X implements MaterialDesignIconGlyphs<X> {
 
         XAMARIN(new String(Character.toChars(0xF0845))),
         XML(new String(Character.toChars(0xF05C0))),
@@ -7778,9 +7915,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public X getDefaultGlyph()
+        {
+            return X.XAMARIN;
+        }
     }
 
-    public enum Y implements GlyphIcons {
+    public enum Y implements MaterialDesignIconGlyphs<Y> {
 
         YAHOO(new String(Character.toChars(0xF0B4F))),
         YEAST(new String(Character.toChars(0xF05C1))),
@@ -7808,9 +7951,15 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public Y getDefaultGlyph()
+        {
+            return Y.YAHOO;
+        }
     }
 
-    public enum Z implements GlyphIcons {
+    public enum Z implements MaterialDesignIconGlyphs<Z> {
 
         Z_WAVE(new String(Character.toChars(0xF0AEA))),
         ZEND(new String(Character.toChars(0xF0AEB))),
@@ -7846,12 +7995,18 @@ public class MaterialDesignIcon
         public String fontFamily() {
             return "'Material Design Icons'";
         }
+
+        @Override
+        public Z getDefaultGlyph()
+        {
+            return Z.Z_WAVE;
+        }
     }
 
-    public static final List<GlyphIcons> GLYPH_ICONS;
+    public static final List<MaterialDesignIconGlyphs<?>> GLYPH_ICONS;
 
     static {
-        final List<GlyphIcons> icons = new ArrayList<>();
+        final List<MaterialDesignIconGlyphs<?>> icons = new ArrayList<>();
         icons.addAll(Arrays.asList(A.values()));
         icons.addAll(Arrays.asList(B.values()));
         icons.addAll(Arrays.asList(C.values()));

@@ -11,7 +11,6 @@
  */
 package fr.flowarg.materialdesignfontfx.demo;
 
-import de.jensd.fx.glyphs.GlyphIcons;
 import fr.flowarg.materialdesignfontfx.MaterialDesignIcon;
 import fr.flowarg.materialdesignfontfx.MaterialDesignIconView;
 import javafx.application.Application;
@@ -19,8 +18,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
-
-import java.lang.reflect.InvocationTargetException;
 
 /**
  *
@@ -34,19 +31,9 @@ public class MaterialDesignIconsDemoApp extends Application {
     {
         FlowPane iconsPane = new FlowPane(3,3);
         iconsPane.setPrefWrapLength(1200);
-        for (GlyphIcons icon : MaterialDesignIcon.GLYPH_ICONS) {
-            final var letter = icon.getClass().getSimpleName();
-            try
-            {
-                Class<MaterialDesignIconView<?>> viewClass = (Class<MaterialDesignIconView<?>>)Class.forName(MaterialDesignIconView.class.getName() + "$" + letter);
-                final var view = viewClass.getConstructor(icon.getClass()).newInstance(icon);
-                view.setSize("5em");
-                iconsPane.getChildren().add(view);
-            } catch (ClassNotFoundException | InvocationTargetException | InstantiationException |
-                     IllegalAccessException | NoSuchMethodException e)
-            {
-                throw new RuntimeException(e);
-            }
+
+        for (var icon : MaterialDesignIcon.GLYPH_ICONS) {
+            iconsPane.getChildren().add(new MaterialDesignIconView<>(icon, "5em"));
         }
         Scene scene = new Scene(new ScrollPane(iconsPane), 1200, 500);
         primaryStage.setScene(scene);

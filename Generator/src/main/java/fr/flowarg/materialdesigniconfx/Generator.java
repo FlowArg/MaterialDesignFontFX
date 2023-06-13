@@ -106,10 +106,10 @@ public class Generator
                 """.formatted(version, version.replace('.', '_'));
         final String enumValues = generateEnumValues(file);
         final String endClass1 = """
-                    public static final List<GlyphIcons> GLYPH_ICONS;
+                    public static final List<MaterialDesignIconGlyphs<?>> GLYPH_ICONS;
                                 
                     static {
-                        final List<GlyphIcons> icons = new ArrayList<>();
+                        final List<MaterialDesignIconGlyphs<?>> icons = new ArrayList<>();
                 """;
 
         final StringBuilder listAdder = new StringBuilder();
@@ -149,7 +149,7 @@ public class Generator
         }
 
         final String startEnum = """
-                    public enum %s implements GlyphIcons {
+                    public enum %s implements MaterialDesignIconGlyphs<%s> {
                     
                 """;
 
@@ -170,6 +170,12 @@ public class Generator
                         public String fontFamily() {
                             return "'Material Design Icons'";
                         }
+                        
+                        @Override
+                        public %s getDefaultGlyph()
+                        {
+                            return %s.%s;
+                        }
                     }
                     
                 """;
@@ -182,9 +188,9 @@ public class Generator
         });
 
         LETTERS.forEach((character, stringBuilder) -> {
-            enumValues.append(startEnum.formatted(character));
+            enumValues.append(startEnum.formatted(character, character));
             enumValues.append(stringBuilder);
-            enumValues.append(endEnum.formatted(character));
+            enumValues.append(endEnum.formatted(character, character, character, stringBuilder.toString().split("\\(")[0].trim()));
         });
 
         return enumValues.toString();
