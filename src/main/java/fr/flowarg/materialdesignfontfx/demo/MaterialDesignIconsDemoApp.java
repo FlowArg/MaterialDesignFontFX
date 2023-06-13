@@ -23,7 +23,6 @@ import javafx.stage.Stage;
  *
  * @author Jens Deters
  */
-@SuppressWarnings("unchecked")
 public class MaterialDesignIconsDemoApp extends Application {
 
     @Override
