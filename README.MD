@@ -7,6 +7,8 @@
 
 This is the updated version of the [Jensd's lib](https://bitbucket.org/Jerady/fontawesomefx/src/master/fontawesomefx/fontawesomefx-materialdesignfont/).
 
+The icons are made by the [Pictogrammers](https://pictogrammers.com) ([mdi](https://pictogrammers.com/library/mdi) icons collection). These project is basically a port of the web version for JavaFx.
+
 It's made for Java 17.
 
 ## Download
