@@ -17,7 +17,7 @@ apply plugin: 'idea'
 apply plugin: 'maven-publish'
 apply plugin: 'signing'
 
-version '7.3.67-0' // material design font version - revision
+version '7.4.47-0' // material design font version - revision
 
 java {
     withJavadocJar()
